@@ -4,7 +4,8 @@ export const itemList = {
     {
       item: "Learn about reducers",
       id: 1528812077286,
-      completed: false
+      completed: false,
+      dateComplete: ""
     }
     // {
     //   item: "Organize Garage",
@@ -24,6 +25,7 @@ export const todoReducer = (state, action) => {
     case "ADD_TODO":
       return {
         ...state,
+        input: "",
         items: [
           ...state.items,
           { item: state.input, id: Date.now(), completed: false }
@@ -40,7 +42,12 @@ export const todoReducer = (state, action) => {
     case "CHECK_TODO":
       const newState = state.items.map(item => {
         if (String(item.id) === String(action.payload.id)) {
-          return { item: item.item, id: item.id, completed: !item.completed };
+          return {
+            item: item.item,
+            id: item.id,
+            completed: !item.completed,
+            dateComplete: item.completed ? "" : Date.now()
+          };
         } else {
           return item;
         }

@@ -5,7 +5,7 @@ import { todoReducer, itemList } from "./reducers/todoReducer.js";
 
 const App = () => {
   const [todoState, dispatch] = useReducer(todoReducer, itemList);
-  // console.log("STATE", todoState);
+  console.log("STATE", todoState);
 
   return (
     <div>

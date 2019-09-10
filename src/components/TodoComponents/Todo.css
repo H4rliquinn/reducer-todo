@@ -1,7 +1,11 @@
-.done{
-    text-decoration: line-through;
+.done {
+  text-decoration: line-through;
 }
 
-.todoItem{
-    display:flex;
+.todoItem {
+  display: flex;
+}
+
+.momentDate {
+  color: red;
 }
