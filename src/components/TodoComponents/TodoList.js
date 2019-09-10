@@ -1,7 +1,7 @@
 import React from "react";
 import "./Todo.css";
 import Moment from "react-moment";
-
+// Moment Date format={"M/D/YY LT"}
 const TodoList = props => {
   return props.todos.items.map(item => {
     return (
@@ -18,11 +18,9 @@ const TodoList = props => {
             <h2>
               Completed:&nbsp;
               {
-                <Moment
-                  className="momentDate"
-                  date={item.dateComplete}
-                  format={"M/D/YY LT"}
-                />
+                <Moment className="momentDate" fromNow>
+                  {item.dateComplete}
+                </Moment>
               }
             </h2>
           ) : (
