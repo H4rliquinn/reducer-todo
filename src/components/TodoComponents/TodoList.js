@@ -1,19 +1,20 @@
-import React from 'react';
-import './Todo.css';
+import React from "react";
+import "./Todo.css";
 
-const TodoList= (props) => {
-
+const TodoList = props => {
+  return props.todos.items.map(item => {
     return (
-        props.todos.map(item=>{
+      <div className="todoItem" key={item.id}>
+        <input
+          type="checkbox"
+          id={item.id}
+          onChange={() => props.dispatch({ type: "CHECK_TODO", payload: item })}
+          checked={props.completed}
+        />
+        <h1>{item.task}</h1>
+      </div>
+    );
+  });
+};
 
-            return(
-                <div className="todoItem" key={item.id}>
-                    <input type="checkbox" id={item.id} onChange={props.checkHandel} checked={props.completed} />
-                    <h1>{item.task}</h1> 
-                </div>
-            ) 
-        })   
-    )
-}
- 
-export default TodoList
+export default TodoList;
