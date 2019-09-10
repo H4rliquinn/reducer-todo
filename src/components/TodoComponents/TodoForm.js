@@ -1,18 +1,6 @@
 import React from "react";
 
 const Todoform = props => {
-  const handleChange = e => {
-    const name = e.target.name;
-    const value = e.target.value;
-    props.dispatch({ [name]: value });
-    // console.log(e.target.value,this.state);
-  };
-
-  const addButton = e => {
-    // props.todos(e, props.todoState.input);
-    // setState({ input: "" });
-  };
-
   return (
     <form>
       <input

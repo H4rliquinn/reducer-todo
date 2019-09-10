@@ -11,7 +11,7 @@ const TodoList = props => {
           onChange={() => props.dispatch({ type: "CHECK_TODO", payload: item })}
           checked={props.completed}
         />
-        <h1>{item.task}</h1>
+        <h1>{item.item}</h1>
       </div>
     );
   });
